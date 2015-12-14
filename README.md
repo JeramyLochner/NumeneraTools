@@ -11,4 +11,8 @@ TODO:
   Equipment (Picking)  
   Lore (Recommended Appearances, Backstories, Names, etc.)  
   Exporting to excel-friendly character sheet  
+  References by page for Numenera Cookbook
   Definitely more I can't think of at the moment  
+
+Newest Additions:  
+  Character moves for foci tiers

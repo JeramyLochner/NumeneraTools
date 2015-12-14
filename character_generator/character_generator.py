@@ -6,9 +6,6 @@
 import configparser
 import random
 
-# Three default classes in Numenera
-classes = ['nano', 'glaive', 'jack']
-
 """ Used to get user input on console
 Params:
 msg = The message printed before options
@@ -136,6 +133,9 @@ class Character:
         self.connection = focus_conf[focus]['connection']
         self.appearance.append(focus_conf[focus]['appearance'])
         self.equipment.append(focus_conf[focus]['add_equip'])
+        for t in range(1, int(self.tier)+1):
+            for move in focus_conf[focus]['tier'+str(t)].split('$'):
+                self.moves.append(move)
 
     """ Set the character descriptor and add any values that pertain to
     that descriptor """
@@ -183,7 +183,10 @@ class Character:
                 self.moves.append(move)
                 
     #def replace_move(self, tier, move):
-        
+
+default_conf = configparser.ConfigParser()
+default_conf.read('default.ini')
+classes = list(dict(default_conf['Descriptions']).keys())
 
 # Basic information         
 name = get_input("What's your name?")
