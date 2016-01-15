@@ -6,12 +6,14 @@
 import configparser
 import random
 
-""" Used to get user input on console
-Params:
-msg = The message printed before options
-restrictions = list of options to pick from
-needed = int of how many options need to be picked"""
+
 def get_input(msg, restrictions = [], needed = 1):
+    """
+    :param msg: 'input()' message
+    :param restrictions: answers to choose from
+    :param needed: how many answers
+    :return:
+    """
     var = []
     print(msg)
     if restrictions == [] or restrictions == ['']:
@@ -182,7 +184,7 @@ class Character:
                 self.moves.append(move)
 
 # Simple commandline version
-if  __name__ == '__main__':
+if __name__ == '__main__':
     default_conf = configparser.ConfigParser()
     default_conf.read('default.ini')
     classes = list(dict(default_conf['Descriptions']).keys())
